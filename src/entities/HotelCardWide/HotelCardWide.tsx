@@ -14,6 +14,8 @@ import clsx from "clsx";
 
 // styles
 import styles from "./HotelCardWide.module.scss";
+import "swiper/css";
+import "swiper/css/pagination";
 
 // img
 import Pool from "/public/images/ico/pool.svg";
@@ -33,61 +35,64 @@ export default memo(function HotelCardWide() {
           Двухместный делюкс с двуспальной кроватью
         </h3>
         <div className={styles.hotelCardWide__slider}>
-          <Swiper
-            slidesPerView={"auto"}
-            pagination={pagination}
-            modules={[Pagination]}
-            className="roomGallery"
-          >
-            <SwiperSlide className={styles.hotelCardWide__sliderItem}>
-              <Image
-                fill={true}
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                src={"/images/9b32bc4ab953979521ba7449387222a2_original.jpg"}
-                alt="9b32bc4ab953979521ba7449387222a2_original"
-              />
-            </SwiperSlide>
-            <SwiperSlide className={styles.hotelCardWide__sliderItem}>
-              <Image
-                fill={true}
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                src={"/images/9b32bc4ab953979521ba7449387222a2_original.jpg"}
-                alt="9b32bc4ab953979521ba7449387222a2_original"
-              />
-            </SwiperSlide>
-            <SwiperSlide className={styles.hotelCardWide__sliderItem}>
-              <Image
-                fill={true}
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                src={"/images/9b32bc4ab953979521ba7449387222a2_original.jpg"}
-                alt="9b32bc4ab953979521ba7449387222a2_original"
-              />
-            </SwiperSlide>
-            <SwiperSlide className={styles.hotelCardWide__sliderItem}>
-              <Image
-                fill={true}
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                src={"/images/9b32bc4ab953979521ba7449387222a2_original.jpg"}
-                alt="9b32bc4ab953979521ba7449387222a2_original"
-              />
-            </SwiperSlide>
-            <SwiperSlide className={styles.hotelCardWide__sliderItem}>
-              <Image
-                fill={true}
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                src={"/images/9b32bc4ab953979521ba7449387222a2_original.jpg"}
-                alt="9b32bc4ab953979521ba7449387222a2_original"
-              />
-            </SwiperSlide>
-            <SwiperSlide className={styles.hotelCardWide__sliderItem}>
-              <Image
-                fill={true}
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                src={"/images/9b32bc4ab953979521ba7449387222a2_original.jpg"}
-                alt="9b32bc4ab953979521ba7449387222a2_original"
-              />
-            </SwiperSlide>
-          </Swiper>
+          <div>
+            <Swiper
+              slidesPerView={"auto"}
+              direction="horizontal"
+              pagination={pagination}
+              modules={[Pagination]}
+              className="roomGallery"
+            >
+              <SwiperSlide className={styles.hotelCardWide__sliderItem}>
+                <Image
+                  fill={true}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  src={"/images/9b32bc4ab953979521ba7449387222a2_original.jpg"}
+                  alt="9b32bc4ab953979521ba7449387222a2_original"
+                />
+              </SwiperSlide>
+              <SwiperSlide className={styles.hotelCardWide__sliderItem}>
+                <Image
+                  fill={true}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  src={"/images/9b32bc4ab953979521ba7449387222a2_original.jpg"}
+                  alt="9b32bc4ab953979521ba7449387222a2_original"
+                />
+              </SwiperSlide>
+              <SwiperSlide className={styles.hotelCardWide__sliderItem}>
+                <Image
+                  fill={true}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  src={"/images/9b32bc4ab953979521ba7449387222a2_original.jpg"}
+                  alt="9b32bc4ab953979521ba7449387222a2_original"
+                />
+              </SwiperSlide>
+              <SwiperSlide className={styles.hotelCardWide__sliderItem}>
+                <Image
+                  fill={true}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  src={"/images/9b32bc4ab953979521ba7449387222a2_original.jpg"}
+                  alt="9b32bc4ab953979521ba7449387222a2_original"
+                />
+              </SwiperSlide>
+              <SwiperSlide className={styles.hotelCardWide__sliderItem}>
+                <Image
+                  fill={true}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  src={"/images/9b32bc4ab953979521ba7449387222a2_original.jpg"}
+                  alt="9b32bc4ab953979521ba7449387222a2_original"
+                />
+              </SwiperSlide>
+              <SwiperSlide className={styles.hotelCardWide__sliderItem}>
+                <Image
+                  fill={true}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  src={"/images/9b32bc4ab953979521ba7449387222a2_original.jpg"}
+                  alt="9b32bc4ab953979521ba7449387222a2_original"
+                />
+              </SwiperSlide>
+            </Swiper>
+          </div>
         </div>
         <div className={styles.hotelCardWide__services}>
           <ul className={styles.hotelCardWide__servicesList}>

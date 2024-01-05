@@ -1,0 +1,80 @@
+@import "/src/shared/styles/variable.scss";
+
+.shortCard {
+  @media screen and (max-width: 500px) {
+    min-width: 300px;
+    width: fit-content;
+  }
+
+  &__sliderRoot {
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+
+    $slider-height: 150px;
+
+    display: flex;
+
+    height: $slider-height;
+    width: inherit;
+
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      display: block;
+    }
+
+    img {
+      object-fit: cover;
+      width: inherit;
+    }
+  }
+
+  &__description {
+    padding: 20px;
+
+    border: 1px solid $main_grey;
+    border-top: 0;
+  }
+
+  &__titleWrap {
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    font-size: 1em;
+  }
+
+  &__location {
+    display: flex;
+    align-items: center;
+  }
+
+  &__ico {
+    height: 12px;
+    width: 12px;
+    margin-right: 5px;
+  }
+
+  &__payload {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__city {
+    font-size: $secondary_fsize;
+  }
+
+  &__date {
+    font-size: $secondary_fsize;
+    color: $text-grey;
+  }
+
+  &__btn {
+    max-width: 250px;
+    margin: 0 auto;
+  }
+}

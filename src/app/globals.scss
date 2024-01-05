@@ -6,11 +6,21 @@
   font-size: 16px;
 }
 
-body .windowWidth {
+html body .windowWidth {
   min-width: $gl-min-width;
   max-width: $gl-max-width;
   margin-left: auto;
   margin-right: auto;
+
+  @media screen and (max-width: 1440px) {
+    margin-left: $gl-margin-left;
+    margin-right: $gl-margin-right;
+  }
+
+  @media #{$screen-middle} {
+    margin-left: $gl-margin-left-mob;
+    margin-right: $gl-margin-right-mob;
+  }
 }
 
 body .mantine-TextInput-section {
@@ -20,7 +30,7 @@ body .mantine-TextInput-section {
 .hotelGallery,
 .roomGallery {
   .swiper-pagination {
-    .swiper-pagination-bullet {
+    & > .swiper-pagination-bullet {
       width: 20px;
       height: 20px;
       text-align: center;
@@ -45,11 +55,4 @@ body .mantine-TextInput-section {
 
 a {
   color: inherit;
-}
-
-@media screen and (max-width: 1440px) {
-  html body .windowWidth {
-    margin-left: $gl-margin-left;
-    margin-right: $gl-margin-right;
-  }
 }

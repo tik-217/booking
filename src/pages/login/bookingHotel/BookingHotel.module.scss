@@ -1,0 +1,32 @@
+@import "/src/shared/styles/variable.scss";
+
+.bookingHotel {
+  margin-top: 60px;
+  margin-bottom: 60px;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 30px;
+  }
+
+  &__title {
+    font-size: $heading_4;
+    font-weight: 400;
+  }
+
+  &__subtitle {
+    font-size: $heading_4;
+    margin-top: 60px;
+    margin-bottom: 20px;
+  }
+
+  &__slider {
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+
+    position: relative;
+  }
+}

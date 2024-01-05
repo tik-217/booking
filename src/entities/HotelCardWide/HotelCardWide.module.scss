@@ -23,6 +23,8 @@
   div &__sliderItem {
     height: 200px;
     width: 320px;
+
+    position: relative;
   }
 
   &__services {
