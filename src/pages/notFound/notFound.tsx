@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 // styles
-import styles from "./NotFound.module.scss";
+import styles from "./notFound.module.scss";
 
 // shared
 import BtnArrow from "src/shared/ui/BtnArrow/BtnArrow";
