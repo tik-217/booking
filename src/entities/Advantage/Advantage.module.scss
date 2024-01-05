@@ -1,0 +1,59 @@
+@import "/src/shared/styles/variable.scss";
+
+.advantage {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  margin-bottom: 20px;
+
+  h3 {
+    font-size: $heading_3;
+    font-weight: 400;
+
+    margin-bottom: 40px;
+
+    text-align: center;
+
+    @media #{$screen-middle} {
+      margin-bottom: 40px;
+
+      font-size: $heading_3;
+    }
+  }
+
+  &__advantageWrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 1;
+
+      margin: 0 30px 50px;
+      min-width: 220px;
+
+      text-align: center;
+
+      img {
+        filter: invert(35%) sepia(15%) saturate(3191%) hue-rotate(172deg)
+          brightness(96%) contrast(87%);
+      }
+
+      h4 {
+        margin: 15px 0 6px;
+
+        font-size: $heading_5;
+        font-weight: 500;
+        color: #000;
+
+        @media #{$screen-middle} {
+          font-size: 1em;
+        }
+      }
+    }
+  }
+}

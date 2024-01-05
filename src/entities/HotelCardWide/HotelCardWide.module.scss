@@ -1,0 +1,112 @@
+@import "/src/shared/styles/variable.scss";
+
+.hotelCardWide {
+  &__wrap {
+  }
+
+  &__title {
+    font-size: $heading_4;
+    margin-bottom: 10px;
+    font-weight: 400;
+  }
+
+  &__slider {
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+
+    img {
+      object-fit: cover;
+    }
+  }
+
+  div &__sliderItem {
+    height: 200px;
+    width: 320px;
+  }
+
+  &__services {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: flex-start;
+
+    margin-top: 10px;
+
+    @media #{$screen-middle} {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    & &List {
+      display: flex;
+      flex-wrap: wrap;
+      align-content: baseline;
+
+      margin-right: 20px;
+
+      list-style: none;
+    }
+
+    & &Item {
+      display: flex;
+      align-items: flex-end;
+      height: fit-content;
+
+      margin-right: 20px;
+      margin-bottom: 5px;
+
+      &_ico {
+        height: 20px;
+        width: 20px;
+        margin-right: 7px;
+
+        color: $link_blue;
+      }
+    }
+  }
+
+  &__costSection {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+
+    @media #{$screen-middle} {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      margin-top: 10px;
+
+      width: 100%;
+    }
+
+    & &Wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+
+      @media #{$screen-middle} {
+        align-items: flex-start;
+      }
+    }
+  }
+
+  &__cost {
+    font-size: $heading_5;
+  }
+
+  &__numberOfPeople {
+    color: $secondary_grey;
+  }
+
+  &__btn {
+    margin-top: 20px;
+
+    @media #{$screen-middle} {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  }
+}

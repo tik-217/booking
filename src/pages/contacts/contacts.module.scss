@@ -1,0 +1,76 @@
+@import "/src/shared/styles/variable.scss";
+
+.contacts {
+  display: flex;
+  justify-content: space-between;
+
+  @media #{$screen-middle} {
+    flex-direction: column;
+  }
+
+  &__question {
+    flex: 1;
+    margin-right: 40px;
+
+    @media #{$screen-middle} {
+      margin-right: 0;
+    }
+  }
+
+  &__title {
+    font-size: $heading_2;
+    margin-bottom: 20px;
+  }
+
+  &__description {
+    flex: 1;
+    margin-top: 63px;
+
+    @media #{$screen-middle} {
+      margin-top: 30px;
+    }
+
+    p {
+      width: 60%;
+
+      @media #{$screen-middle} {
+        width: 100%;
+      }
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__firstSection {
+    display: flex;
+    margin-bottom: 10px;
+
+    & > div {
+      flex: 1;
+
+      input {
+        @media #{$screen-middle} {
+          font-size: $secondary_fsize;
+        }
+      }
+
+      &:first-child {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  &__questionInput {
+    font-size: 1em;
+    margin-bottom: 10px;
+
+    @media #{$screen-middle} {
+      textarea {
+        font-size: $secondary_fsize;
+      }
+    }
+  }
+}

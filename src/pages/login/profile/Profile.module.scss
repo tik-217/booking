@@ -1,0 +1,184 @@
+@import "/src/shared/styles/variable.scss";
+
+.persona {
+  &__wrap {
+    display: flex;
+    justify-content: center;
+
+    padding: 60px 0;
+    width: 100%;
+
+    @media screen and (max-width: 570px) {
+      flex-direction: column;
+    }
+  }
+}
+
+.shortInfo {
+  display: flex;
+  flex-grow: 0;
+  align-items: baseline;
+  justify-content: end;
+
+  @media #{$screen-middle} {
+    flex: 1;
+  }
+
+  &__wrap {
+    display: flex;
+
+    justify-content: flex-end;
+
+    padding-right: 60px;
+    margin-right: 60px;
+
+    border-right: 2px solid $main_grey;
+
+    @media screen and (max-width: 860px) {
+      flex-direction: column;
+    }
+
+    @media #{$screen-middle} {
+      padding-right: 30px;
+      margin-right: 0;
+    }
+
+    @media screen and (max-width: 570px) {
+      border-right: none;
+      border-bottom: 2px solid $main_grey;
+
+      padding-right: 0;
+      margin-right: 0;
+
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+
+      width: 100%;
+    }
+  }
+
+  &__image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-right: 20px;
+
+    @media screen and (max-width: 860px) {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__ico {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 50px;
+    width: 50px;
+    background: #555;
+
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+
+  &__logo {
+  }
+
+  &__nameBlock {
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (max-width: 570px) {
+      flex-direction: row;
+    }
+  }
+
+  &__name {
+    margin-right: 5px;
+
+    @media #{$screen-middle} {
+      margin-left: 10px;
+    }
+  }
+
+  &__name,
+  &__surname {
+    position: relative;
+    width: fit-content;
+    cursor: pointer;
+
+    &::after {
+      content: "";
+
+      $pencil-width: 10px;
+
+      position: absolute;
+      top: 50%;
+      right: -$pencil-width * 1.5;
+      transform: translateY(-50%);
+
+      width: $pencil-width;
+      height: 10px;
+
+      display: none;
+
+      background: url("/images/ico/pencil.svg");
+      background-repeat: repeat;
+      background-position: center;
+      background-size: contain;
+    }
+
+    &:hover {
+      &::after {
+        display: block;
+      }
+    }
+  }
+}
+
+.metadata {
+  @media #{$screen-middle} {
+    flex: 1;
+    padding: 0 10px;
+  }
+
+  &__wrap {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: auto auto auto;
+    gap: 25px 60px;
+    flex: 1;
+
+    @media screen and (max-width: 1130px) {
+      grid-template-columns: auto auto;
+      grid-template-rows: 1fr 1fr 1fr;
+    }
+
+    @media #{$screen-middle} {
+      grid-template-columns: 1fr;
+      grid-auto-flow: row;
+
+      padding-left: 30px;
+    }
+
+    @media screen and (max-width: 570px) {
+      grid-template-columns: 1fr 1fr;
+      gap: 20px 60px;
+
+      padding-left: 0;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+  }
+
+  &__text {
+    word-break: break-all;
+  }
+}

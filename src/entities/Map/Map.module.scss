@@ -1,0 +1,28 @@
+@import "/src/shared/styles/variable.scss";
+
+.map {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 200;
+
+  height: 100vh;
+  width: 100%;
+  transition: $transition-main-duration $transition-main-type width;
+
+  &_close {
+    width: 0%;
+  }
+
+  &__maping {
+    height: 100vh;
+    width: 100%;
+  }
+
+  &__control {
+    background: $main_grey;
+    padding: 10px 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}

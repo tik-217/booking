@@ -1,0 +1,11 @@
+@import "/src/shared/styles/variable.scss";
+
+.searchCity {
+  margin-bottom: 35px;
+
+  .directionSelect {
+    input {
+      border: 2px solid $beige;
+    }
+  }
+}

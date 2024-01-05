@@ -1,0 +1,235 @@
+@import "/src/shared/styles/variable.scss";
+
+.header {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+
+  margin: 0 auto;
+
+  max-width: $gl-max-width;
+  min-width: $gl-min-width;
+
+  position: relative;
+
+  z-index: 100;
+
+  &__logo {
+    @media #{$screen-middle-booking-calc} {
+      order: 1;
+    }
+
+    a {
+      font-size: $heading_3;
+      color: $beige;
+      font-weight: 600;
+      text-decoration: none;
+    }
+  }
+
+  &__menu {
+    @media #{$screen-middle-booking-calc} {
+      transition: $transition-main-duration $transition-main-type top;
+      order: 2;
+
+      position: fixed;
+      z-index: 5;
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 100%;
+
+      background: $main_grey;
+
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: center;
+    }
+
+    &_active {
+      @media #{$screen-middle-booking-calc} {
+        transition: $transition-main-duration $transition-main-type top;
+        order: 2;
+
+        position: fixed;
+        z-index: 5;
+        top: -100vh;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+
+        background: $main_grey;
+
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+      }
+    }
+  }
+
+  &__menuWrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    z-index: 999;
+
+    @media #{$screen-middle-booking-calc} {
+      position: relative;
+      top: 0;
+      left: 0;
+
+      order: 4;
+
+      transform: translate(0%, 0%);
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+
+    @media #{$screen-middle-booking-calc} {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      transition: $transition-main-duration $transition-main-type all;
+    }
+  }
+
+  &__listItem {
+    margin: 0 12px;
+    position: relative;
+
+    @media #{$screen-middle-booking-calc} {
+      margin: 0;
+    }
+
+    &::after {
+      content: "";
+
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+
+      display: block;
+      height: 2px;
+      width: 0;
+
+      background: $dark_blue;
+      transition: $transition-main-duration;
+
+      opacity: 0;
+    }
+
+    &:hover:after {
+      width: 100%;
+      opacity: 1;
+      bottom: 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+
+      @media #{$screen-middle-booking-calc} {
+        color: $dark_blue;
+      }
+    }
+  }
+
+  &__login {
+    display: flex;
+    justify-content: right;
+
+    list-style: none;
+
+    @media #{$screen-middle-booking-calc} {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      order: 3;
+    }
+  }
+
+  &__loginItem {
+    position: relative;
+    margin-left: 15px;
+
+    &::after {
+      content: "";
+
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+
+      display: block;
+      height: 2px;
+      width: 0;
+
+      background: $dark_blue;
+      transition: $transition-main-duration;
+
+      opacity: 0;
+    }
+
+    &:hover:after {
+      width: 100%;
+      opacity: 1;
+      bottom: 0;
+    }
+
+    a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+
+      @media #{$screen-middle-booking-calc} {
+        color: $dark_blue;
+      }
+    }
+  }
+
+  &__listItem,
+  &__loginItem {
+    a {
+      @media #{$screen-middle-booking-calc} {
+        margin-left: 0;
+        font-size: $heading_3;
+      }
+    }
+  }
+
+  &__open {
+    display: none;
+
+    @media #{$screen-middle-booking-calc} {
+      display: grid;
+      justify-self: flex-end;
+
+      order: 2;
+    }
+  }
+
+  &__close {
+    display: none;
+
+    &_active {
+      @media #{$screen-middle-booking-calc} {
+        display: block;
+        position: absolute;
+        top: 35px;
+        right: 5%;
+
+        color: $text_grey;
+      }
+    }
+  }
+}

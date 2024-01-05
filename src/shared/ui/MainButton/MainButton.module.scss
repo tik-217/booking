@@ -1,0 +1,36 @@
+@import "src/shared/styles/variable.scss";
+
+.button {
+  width: 100%;
+  padding: 2px 60px;
+
+  background: transparent;
+  color: $white;
+  border-radius: 10px;
+  border: 2px solid $beige;
+  transition: $transition-btn-duration all;
+
+  font-family: inherit;
+  font-weight: 400;
+  cursor: pointer;
+
+  color: white;
+
+  &:hover {
+    color: white;
+    background: $beige;
+  }
+
+  &_blue {
+    border: 2px solid #25417a;
+    color: white;
+
+    &:hover {
+      background: #25417a;
+    }
+  }
+
+  &_colorBlack {
+    color: black;
+  }
+}

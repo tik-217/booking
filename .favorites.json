@@ -1,0 +1,50 @@
+[
+    {
+        "type": "Directory",
+        "name": "/Users/tigrangabulan/Documents/booking/src/app",
+        "parent_id": null,
+        "workspaceRoot": "/Users/tigrangabulan/Documents/booking",
+        "workspacePath": "src/app",
+        "id": "es6VMnOCf2z3h5b0"
+    },
+    {
+        "type": "Directory",
+        "name": "/Users/tigrangabulan/Documents/booking/src/pages",
+        "parent_id": null,
+        "workspaceRoot": "/Users/tigrangabulan/Documents/booking",
+        "workspacePath": "src/pages",
+        "id": "9I4iYcosf0GWOK7U"
+    },
+    {
+        "type": "Directory",
+        "name": "/Users/tigrangabulan/Documents/booking/src/widgets",
+        "parent_id": null,
+        "workspaceRoot": "/Users/tigrangabulan/Documents/booking",
+        "workspacePath": "src/widgets",
+        "id": "8cwzaDOflYdU2soT"
+    },
+    {
+        "type": "Directory",
+        "name": "/Users/tigrangabulan/Documents/booking/src/features",
+        "parent_id": null,
+        "workspaceRoot": "/Users/tigrangabulan/Documents/booking",
+        "workspacePath": "src/features",
+        "id": "ZX7p8avBie0MkFY1"
+    },
+    {
+        "type": "Directory",
+        "name": "/Users/tigrangabulan/Documents/booking/src/entities",
+        "parent_id": null,
+        "workspaceRoot": "/Users/tigrangabulan/Documents/booking",
+        "workspacePath": "src/entities",
+        "id": "znoIvcK89wT6tNxP"
+    },
+    {
+        "type": "Directory",
+        "name": "/Users/tigrangabulan/Documents/booking/src/shared",
+        "parent_id": null,
+        "workspaceRoot": "/Users/tigrangabulan/Documents/booking",
+        "workspacePath": "src/shared",
+        "id": "7duKzMFT4AJ5Ctfs"
+    }
+]

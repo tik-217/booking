@@ -1,0 +1,4 @@
+{
+  "favorites.sortDirection": "ASC",
+  "typescript.tsdk": "node_modules/typescript/lib"
+}

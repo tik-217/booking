@@ -1,0 +1,25 @@
+@import "/src/shared/styles/variable.scss";
+
+.topHotels {
+  &__title {
+    font-size: $heading_3;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 60px;
+
+    @media #{$screen-middle} {
+      margin-bottom: 40px;
+      font-size: $heading_3;
+    }
+  }
+
+  &__cards {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 50px;
+
+    & > div {
+      width: fit-content;
+    }
+  }
+}

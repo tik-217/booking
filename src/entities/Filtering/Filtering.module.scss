@@ -1,0 +1,39 @@
+@import "/src/shared/styles/variable.scss";
+
+.filtering {
+  section {
+    margin-bottom: 36px;
+  }
+
+  h5 {
+    font-size: 1em;
+    margin-bottom: 18px;
+    line-height: 110%;
+  }
+
+  h6 {
+    font-size: 1em;
+    margin-bottom: 8px;
+  }
+
+  ul {
+    list-style: none;
+
+    li {
+      margin-bottom: 8px;
+    }
+  }
+}
+
+.filtering__openBtnMore {
+  color: $link_blue;
+  cursor: pointer;
+  text-decoration: underline;
+  display: inline;
+}
+
+.filtering__priceCost {
+  input {
+    border: 2px solid $beige;
+  }
+}

@@ -1,0 +1,46 @@
+$white: #ffffff;
+$beige: #e7a165;
+$link_blue: #2669a8;
+$light_blue: #25417a;
+$dark_blue: #0f2c59;
+$main_grey: #f3f3f3;
+$text_grey: #cfcfcf;
+$secondary_grey: #cdcdcd;
+$green: #33a15f;
+
+// font
+$heading_1: 2.3em; // 37px
+$heading_2: 1.9em; // 30px
+$heading_3: 1.5em; // 24px
+$heading_4: 1.3em; // 20px
+$heading_5: 1.12em; // 18px
+$main_fsize: 1em; // 16px
+$secondary_fsize: 0.85em; // 14px
+$heading_6: 0.75em; // 12px
+
+$font-family-default: "Jost", sans-serif;
+
+// margin
+$default-margin: 90px 8% 0;
+$tablet-margin: 50px 5% 0;
+$mobile-margin: 30px 3% 0;
+$margin-window: 35px 5%;
+$gl-max-width: 1300px;
+$gl-min-width: 320px;
+$gl-margin-left: 5%;
+$gl-margin-right: 5%;
+
+// screen
+
+$screen-large: "(max-width: 1440px)";
+$screen-large-booking-calc: "(max-width: 1200px)";
+$screen-middle-booking-calc: "(max-width: 860px)";
+$screen-middle: "(max-width: 768px)";
+$screen-small-booking-calc: "(max-width: 710px)";
+$screen-small: "(max-width: 365px)";
+
+// transiton
+$transition-main-duration: 0.4s;
+$transition-btn-duration: 0.4s;
+$transition-main-type: cubic-bezier(0.65, 0, 0.35, 1) 0s;
+$transition-btn-type: easy-in-out;

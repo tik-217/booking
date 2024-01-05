@@ -1,0 +1,76 @@
+@import "/src/shared/styles/variable.scss";
+
+.hotels {
+  margin: 0 5%;
+
+  &__main {
+    display: flex;
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+}
+
+.searchResult {
+  width: 100%;
+  grid-area: searchResult;
+
+  &__text {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+  }
+
+  &__city {
+    display: flex;
+    align-items: center;
+
+    p {
+      font-size: $heading_4;
+      margin-left: 5px;
+      margin-bottom: 2px;
+
+      @media #{$screen-middle} {
+        font-size: 1em;
+      }
+    }
+  }
+
+  &__toMap {
+    cursor: pointer;
+
+    @media #{$screen-middle} {
+      font-size: 1em;
+    }
+  }
+
+  &__text_active,
+  &__toMap {
+    color: $link_blue;
+  }
+}
+
+.hotelsList {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  justify-items: center;
+
+  width: 100%;
+
+  @media screen and (max-width: 1300px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media screen and (max-width: 1140px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (max-width: 500px) {
+    grid-template-columns: 1fr;
+  }
+}

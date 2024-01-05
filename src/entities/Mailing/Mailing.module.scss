@@ -1,0 +1,76 @@
+@import "/src/shared/styles/variable.scss";
+
+.mailing {
+  &__title {
+    font-size: $heading_3;
+    line-height: 130%;
+    font-weight: 400;
+    text-align: center;
+
+    margin-bottom: 40px;
+    max-width: 600px;
+
+    color: white;
+
+    @media #{$screen-middle} {
+      font-size: $heading_3;
+    }
+  }
+
+  &__input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: relative;
+
+    input {
+      padding: 20px 25px;
+      outline: none;
+      border: 2px solid #e7a165;
+      border-radius: 12px;
+      width: 500px;
+      background: none;
+      color: white;
+
+      @media #{$screen-middle} {
+        width: 300px;
+      }
+
+      &::placeholder {
+        color: white;
+      }
+    }
+  }
+
+  &__btn {
+    display: none;
+
+    @media #{$screen-middle} {
+      display: block;
+      margin-top: 15px;
+    }
+  }
+
+  &__btnMobile {
+    display: block;
+    transform: translateY(-50%);
+
+    position: absolute;
+    top: 50%;
+    right: 30px;
+
+    text-decoration: underline;
+    color: white;
+    font-size: $secondary_fsize;
+    cursor: pointer;
+
+    background: none;
+    outline: none;
+    border: none;
+
+    @media #{$screen-middle} {
+      display: none;
+    }
+  }
+}

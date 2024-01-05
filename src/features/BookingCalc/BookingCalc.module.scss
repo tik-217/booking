@@ -1,0 +1,150 @@
+@import "/src/shared/styles/variable.scss";
+
+.calc {
+  display: grid;
+  grid-template-columns: 300px 1fr auto auto;
+  background: rgba(15, 44, 89, 0.8);
+  padding: 20px 30px;
+  border-radius: 10px;
+  width: 100%;
+
+  @media #{$screen-large-booking-calc} {
+    grid-template-columns: 2fr 2fr 1fr;
+
+    grid-template-areas:
+      "direction direction direction"
+      "datePicker guests searchHotels";
+  }
+
+  @media #{$screen-middle-booking-calc} {
+    grid-template-columns: 1fr 1fr;
+
+    grid-template-areas:
+      "direction direction"
+      "datePicker guests"
+      "searchHotels searchHotels";
+  }
+
+  @media #{$screen-small-booking-calc} {
+    grid-template-columns: 1fr;
+
+    grid-template-areas:
+      "direction"
+      "datePicker"
+      "guests"
+      "searchHotels";
+  }
+
+  &__direction {
+    @media #{$screen-large-booking-calc} {
+      margin-bottom: 20px;
+      grid-area: direction;
+    }
+  }
+
+  &__datePicker {
+    @media #{$screen-large-booking-calc} {
+      width: 100%;
+      box-sizing: border-box;
+      grid-area: datePicker;
+    }
+
+    @media #{$screen-small-booking-calc} {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__guests {
+    @media #{$screen-large-booking-calc} {
+      grid-area: guests;
+    }
+  }
+
+  &__searchHotels {
+    align-self: flex-end;
+
+    @media #{$screen-large-booking-calc} {
+      grid-area: searchHotels;
+    }
+
+    @media #{$screen-middle-booking-calc} {
+      margin-top: 20px;
+    }
+  }
+
+  &__direction,
+  &__datePicker,
+  &__searchHotels,
+  &__guests {
+    position: relative;
+
+    div {
+      input,
+      button {
+        background: transparent;
+        border: 2px solid $main_grey;
+        padding: 2px 25px;
+        border-radius: 10px;
+        outline: none;
+        color: $white;
+        font-family: inherit;
+        transition: $transition-btn-duration border;
+        white-space: nowrap;
+
+        &::placeholder {
+          color: $white;
+          opacity: 0.6;
+        }
+
+        &:hover {
+          border: 2px solid #f3f3f3b9;
+        }
+      }
+    }
+  }
+
+  &__directionInput,
+  &__datePickerInput,
+  &__guestsInput {
+    margin-right: 20px;
+  }
+
+  &__directionInput {
+    @media #{$screen-large-booking-calc} {
+      margin-right: 0;
+    }
+  }
+
+  &__datePickerInput {
+    min-width: 250px;
+
+    @media #{$screen-small-booking-calc} {
+      margin-right: 0;
+    }
+  }
+
+  &__guestsInput {
+    @media #{$screen-middle-booking-calc} {
+      margin-right: 0;
+    }
+  }
+
+  &__searchHotelsBtn {
+    width: 100%;
+    padding: 2px 60px;
+
+    background: transparent;
+    color: $white;
+    border-radius: 10px;
+    border: 2px solid $beige;
+    transition: $transition-btn-duration background;
+
+    font-family: inherit;
+    font-weight: 400;
+    cursor: pointer;
+
+    &:hover {
+      background: $beige;
+    }
+  }
+}

@@ -1,0 +1,77 @@
+@import "/src/shared/styles/variable.scss";
+
+.review {
+  padding: 20px 30px;
+  border: 1px solid #f2f2f2;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #ededed;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  &__persona {
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon {
+    border: 2px solid burlywood;
+    border-radius: 50%;
+
+    height: 29px;
+    width: 29px;
+    margin-right: 10px;
+
+    font-weight: 500;
+    text-align: center;
+
+    color: burlywood;
+  }
+
+  &__nameBlock {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__username,
+  &__country {
+    font-size: $secondary_fsize;
+  }
+
+  &__username {
+  }
+
+  &__country {
+  }
+
+  &__index {
+    background: #2cc46c;
+    border-radius: 50%;
+
+    height: 27px;
+    width: 27px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__indexNumber {
+    color: white;
+  }
+
+  &__message {
+    margin-bottom: 10px;
+
+    font-size: $secondary_fsize;
+  }
+
+  &__date {
+    color: $text_grey;
+    font-size: $secondary_fsize;
+  }
+}
