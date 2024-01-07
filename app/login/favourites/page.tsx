@@ -1,3 +1,3 @@
-import Favourites from "src/pages/login/favourits/Favourites";
+import Favourites from "src/views/login/favourits/Favourites";
 
 export default Favourites;

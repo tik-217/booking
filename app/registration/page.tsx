@@ -1,3 +1,3 @@
-import Registration from "src/pages/registration/registration";
+import Registration from "src/views/registration/registration";
 
 export default Registration;

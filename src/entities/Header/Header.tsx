@@ -88,7 +88,7 @@ export default memo(function Header() {
           </li>
           <li className={styles.header__loginItem}>
             <Link
-              href={"/register"}
+              href={"/registration"}
               onClick={() => dispatch(setOpenMenu(false))}
             >
               Зарегистрироваться

@@ -8,7 +8,7 @@ import { MantineProvider, ColorSchemeScript } from "@mantine/core";
 import { Roboto_Slab } from "next/font/google";
 
 // store
-import StoreProvider from "app/StoreProvider";
+import StoreProvider from "helpers/StoreProvider";
 
 // styles
 import "src/app/globals.scss";
@@ -34,11 +34,15 @@ export default function RootLayout({
     <html lang="ru">
       <head>
         <ColorSchemeScript />
+        <meta
+          name="viewport"
+          content="minimum-scale=1, initial-scale=1, width=device-width, user-scalable=no"
+        />
       </head>
       <body className={robotoSlab.className}>
-        <MantineProvider>
-          <StoreProvider>{children}</StoreProvider>
-        </MantineProvider>
+        <StoreProvider>
+          <MantineProvider>{children}</MantineProvider>
+        </StoreProvider>
       </body>
     </html>
   );

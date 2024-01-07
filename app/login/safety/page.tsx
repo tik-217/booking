@@ -1,3 +1,3 @@
-import Safety from "src/pages/login/safety/Safety";
+import Safety from "src/views/login/safety/Safety";
 
 export default Safety;
