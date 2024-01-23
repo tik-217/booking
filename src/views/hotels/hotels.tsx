@@ -1,5 +1,9 @@
 "use client";
 
+// react next
+import { memo } from "react";
+import dynamic from "next/dynamic";
+
 // mantine
 import { Badge, Button } from "@mantine/core";
 
@@ -7,22 +11,21 @@ import { Badge, Button } from "@mantine/core";
 import clsx from "clsx";
 
 // widgets
+import Header from "src/widgets/Header/Header";
 import Sidebar from "src/widgets/Sidebar/Sidebar";
 
 // entities
-import HeaderAccount from "src/entities/HeaderAccount/HeaderAccount";
-import HotelCard from "src/entities/HotelCard/HotelCard";
+import HotelCard from "src/features/HotelCard/HotelCard";
 
 // shared
-import CreatingList from "src/shared/ui/CreatingList";
+import CreatingList from "src/shared/helpers/CreatingList";
+import { setOpenMap } from "src/shared/store/reducers";
+import { useAppDispatch } from "src/shared/store/hooks";
 
 // styles
 import styles from "./hotels.module.scss";
-import { setOpenMap } from "src/shared/store/reducers";
-import { useAppDispatch } from "src/shared/store/hooks";
-import dynamic from "next/dynamic";
 
-export default function Hotels() {
+export default memo(function Hotels() {
   const dispatch = useAppDispatch();
 
   const hotelsList = (hotelsNum: number) =>
@@ -35,7 +38,9 @@ export default function Hotels() {
   return (
     <>
       <div className={clsx(styles.hotels, "windowWidth")}>
-        <HeaderAccount />
+        <div className={styles.hotels__headerWrap}>
+          <Header />
+        </div>
         <main className={clsx(styles.hotels__main)}>
           <Sidebar />
           <div className={styles.searchResult}>
@@ -62,4 +67,4 @@ export default function Hotels() {
       <DynamicMap />
     </>
   );
-}
+});

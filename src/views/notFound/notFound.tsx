@@ -1,39 +1,36 @@
 "use client";
 
-// next
+// react next
+import { memo } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+
+// mantine
+import { Title, Text, Button, Container, Group } from "@mantine/core";
 
 // styles
 import styles from "./notFound.module.scss";
 
-// shared
-import BtnArrow from "src/shared/ui/BtnArrow/BtnArrow";
-
-export default function NotFound() {
-  const router = useRouter();
-
+export default memo(function NotFound() {
   return (
-    <main className={styles.notFound}>
-      <h2 className={styles.notFound__title}>
-        <Link href="/">Vroom Room</Link>
-      </h2>
-      <div className={styles.notFound__main}>
-        <div className={styles.notFound__errorInfo}>
-          <h1 className={styles.notFound__errorCode}>404</h1>
-          <p className={styles.notFound__errorDescription}>
-            Страница не найдена
-          </p>
-        </div>
-        <div className={styles.notFound__btns}>
-          <Link href="/">
-            <BtnArrow btnText="На главную" />
-          </Link>
-          <Link href="/" onClick={() => router.back()}>
-            <BtnArrow btnText="Назад" arrowVector="left" />
-          </Link>
-        </div>
-      </div>
-    </main>
+    <Container className={styles.root}>
+      <div className={styles.root__label}>404</div>
+      <Title className={styles.root__title}>Вы нашли тайное место.</Title>
+      <Text
+        c="dimmed"
+        size="lg"
+        ta="center"
+        className={styles.root__description}
+      >
+        К сожалению, это всего лишь страница 404. Возможно, вы неправильно ввели
+        адрес или страница была перемещена на другой URL.
+      </Text>
+      <Group justify="center">
+        <Link href={"/"}>
+          <Button variant="subtle" size="md">
+            Верни меня на домашнюю страницу
+          </Button>
+        </Link>
+      </Group>
+    </Container>
   );
-}
+});

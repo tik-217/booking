@@ -1,11 +1,13 @@
 "use client";
 
+// react
+import { memo } from "react";
+
 // mantine
 import { Select } from "@mantine/core";
 
 // styles
 import styles from "./SearchObject.module.scss";
-import { memo } from "react";
 
 export default memo(function SearchObject() {
   return (

@@ -1,7 +1,7 @@
 "use client";
 
 // react
-import { useEffect } from "react";
+import { memo, useEffect } from "react";
 
 // clsx
 import clsx from "clsx";
@@ -16,7 +16,7 @@ import "leaflet/dist/leaflet.css";
 import { useAppDispatch, useAppSelector } from "src/shared/store/hooks";
 import { setOpenMap } from "src/shared/store/reducers";
 
-export default function Map() {
+export default memo(function Map() {
   const openMap = useAppSelector((state) => state.openMap);
   const dispatch = useAppDispatch();
 
@@ -50,4 +50,4 @@ export default function Map() {
       </div>
     </>
   );
-}
+});

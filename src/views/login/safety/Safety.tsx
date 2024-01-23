@@ -1,13 +1,17 @@
 "use client";
 
+// react
+import { memo } from "react";
+
 // mantine
 import { Button, Input, PasswordInput } from "@mantine/core";
 
 // shared
 import MainButton from "src/shared/ui/MainButton/MainButton";
+import useCheckAuth from "src/shared/helpers/useCheckAuth";
 
 // entities
-import HeaderProfile from "src/entities/HeaderProfile/HeaderProfile";
+import HeaderProfile from "src/widgets/HeaderProfile/HeaderProfile";
 
 // clsx
 import clsx from "clsx";
@@ -15,7 +19,9 @@ import clsx from "clsx";
 // styles
 import styles from "./Safety.module.scss";
 
-export default function Safety() {
+export default memo(function Safety() {
+  useCheckAuth();
+
   return (
     <>
       <HeaderProfile />
@@ -52,4 +58,4 @@ export default function Safety() {
       </main>
     </>
   );
-}
+});

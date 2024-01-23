@@ -1,3 +1,3 @@
-import Contacts from "src/views/contacts/contacts";
+import Contacts from "src/views/Contacts/Contacts";
 
 export default Contacts;

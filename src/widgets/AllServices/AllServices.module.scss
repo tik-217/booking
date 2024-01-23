@@ -1,0 +1,15 @@
+.allServices {
+  &__servicesBlock {
+    list-style: none;
+
+    margin-right: 50px;
+    margin-bottom: 10px;
+  }
+
+  &__subTitle {
+    font-size: $heading_5;
+    font-weight: 400;
+
+    margin-bottom: 5px;
+  }
+}

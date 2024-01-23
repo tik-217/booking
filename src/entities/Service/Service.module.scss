@@ -1,0 +1,15 @@
+.service {
+  display: flex;
+
+  &__ico {
+    display: flex;
+    align-items: center;
+
+    margin-right: 5px;
+
+    svg {
+      height: 20px;
+      color: #1466ac;
+    }
+  }
+}

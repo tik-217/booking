@@ -1,0 +1,33 @@
+
+.hotelInfo {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    margin-bottom: 20px;
+  }
+
+  &__headerWrap {
+    color: #000;
+  }
+
+  &__title {
+    font-size: $heading_4;
+    font-weight: 400;
+  }
+
+  &__slider {
+    border-radius: 10px;
+    overflow: hidden;
+
+    img {
+      object-fit: cover;
+    }
+  }
+
+  div &__sliderItem {
+    height: 200px;
+    width: 320px;
+  }
+}

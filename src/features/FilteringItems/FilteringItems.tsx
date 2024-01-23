@@ -8,13 +8,13 @@ import { memo } from "react";
 import Filtering from "src/entities/Filtering/Filtering";
 
 // shared
-import CreatingList from "src/shared/ui/CreatingList";
+import CreatingList from "src/shared/helpers/CreatingList";
 
 export default memo(function FilteringItems() {
   const stars = (starsNum: number) =>
     CreatingList(
       starsNum,
-      <Image height={10} width={10} src={"/images/ico/star.svg"} alt={"star"} />
+      <Image height={10} width={10} src={"/ico/star.svg"} alt={"star"} />
     );
 
   return (

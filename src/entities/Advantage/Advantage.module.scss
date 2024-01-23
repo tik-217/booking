@@ -1,13 +1,9 @@
-@import "/src/shared/styles/variable.scss";
-
 .advantage {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 
-  margin-bottom: 20px;
-
-  h3 {
+  .advantage__title {
     font-size: $heading_3;
     font-weight: 400;
 
@@ -26,33 +22,34 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+  }
 
-    section {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      flex: 1;
+  &__block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
 
-      margin: 0 30px 50px;
-      min-width: 220px;
+    margin: 0 30px;
+    min-width: 220px;
 
-      text-align: center;
+    text-align: center;
 
-      img {
-        filter: invert(35%) sepia(15%) saturate(3191%) hue-rotate(172deg)
-          brightness(96%) contrast(87%);
-      }
+    & &Ico {
+      color: $link_blue;
+      height: 30px;
+      width: 30px;
+    }
 
-      h4 {
-        margin: 15px 0 6px;
+    & &Title {
+      margin: 15px 0 6px;
 
-        font-size: $heading_5;
-        font-weight: 500;
-        color: #000;
+      font-size: $heading_5;
+      font-weight: 500;
+      color: #000;
 
-        @media #{$screen-middle} {
-          font-size: 1em;
-        }
+      @media #{$screen-middle} {
+        font-size: 1em;
       }
     }
   }

@@ -1,18 +1,20 @@
 "use client";
 
-// next
+// react next
+import { memo } from "react";
 import dynamic from "next/dynamic";
 
 // mantine
 import { Button, Rating } from "@mantine/core";
 
 // entities
-import HeaderProfile from "src/entities/HeaderProfile/HeaderProfile";
+import HeaderProfile from "src/widgets/HeaderProfile/HeaderProfile";
 import HotelCardWide from "src/entities/HotelCardWide/HotelCardWide";
 
 // shared
 import { useAppDispatch } from "src/shared/store/hooks";
 import { setOpenMap } from "src/shared/store/reducers";
+import useCheckAuth from "src/shared/helpers/useCheckAuth";
 
 // styles
 import styles from "./BookingHotel.module.scss";
@@ -20,7 +22,9 @@ import styles from "./BookingHotel.module.scss";
 // clsx
 import clsx from "clsx";
 
-export default function BookingHotel() {
+export default memo(function BookingHotel() {
+  useCheckAuth();
+
   const dispatch = useAppDispatch();
 
   const DynamicMap = dynamic(() => import("src/entities/Map/Map"), {
@@ -56,4 +60,4 @@ export default function BookingHotel() {
       <DynamicMap />
     </>
   );
-}
+});

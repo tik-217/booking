@@ -1,0 +1,138 @@
+.hotelCard {
+  border: 1px solid $main_grey;
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+  max-width: 300px;
+  width: inherit;
+  width: 100%;
+
+  @media screen and (max-width: 500px) {
+    max-width: max-content;
+  }
+
+  &__slider {
+    $slider-height: 180px;
+
+    display: flex;
+
+    height: $slider-height;
+    width: inherit;
+
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      display: block;
+    }
+
+    img {
+      object-fit: cover;
+      width: inherit;
+    }
+  }
+
+  &__sliderRoot {
+    width: inherit;
+  }
+
+  &__info {
+    padding: 0 20px;
+
+    & &Header {
+      margin-top: 20px;
+
+      & > div {
+        display: flex;
+        align-items: center;
+      }
+
+      h5 {
+        font-size: 1em;
+        margin-bottom: 5px;
+        font-weight: 500;
+      }
+
+      svg {
+        height: 18px;
+        width: fit-content;
+        margin-right: 5px;
+        color: $green;
+      }
+
+      span {
+        font-size: $heading_6;
+        color: $green;
+      }
+    }
+  }
+
+  &__services {
+    ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 20px;
+
+      li {
+        display: flex;
+        align-items: center;
+
+        margin: 4px 12px 4px 0;
+
+        svg {
+          color: $link_blue;
+          margin-right: 5px;
+          height: 18px;
+          width: 18px;
+        }
+
+        span {
+          font-size: $secondary_fsize;
+          line-height: 100%;
+        }
+      }
+    }
+
+    &_serparator {
+      width: 8px;
+      height: 5px;
+      background: #e5e5e5;
+      position: relative;
+
+      &:before,
+      &:after {
+        content: "";
+        width: 0;
+        height: 0;
+        position: absolute;
+        left: 0;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+      }
+
+      &:before {
+        top: -4px;
+        border-bottom: 4px solid #e5e5e5;
+      }
+
+      &:after {
+        bottom: -4px;
+        border-top: 4px solid #e5e5e5;
+      }
+    }
+  }
+
+  &__cost {
+    margin-top: 20px;
+
+    h4 {
+      font-weight: 400;
+      font-size: $heading_5;
+    }
+  }
+
+  &__btnHotelInfo {
+    margin: 20px 0;
+  }
+}

@@ -1,0 +1,9 @@
+.reviews {
+  margin-top: 30px;
+
+  &__title {
+    font-size: $heading_5;
+    font-weight: 400;
+    margin-bottom: 15px;
+  }
+}

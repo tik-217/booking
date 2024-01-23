@@ -1,3 +1,3 @@
-import BookingHistory from "src/views/login/bookingHistory/BookingHistory";
+import BookingHistory from "src/views/Login/BookingHistory/BookingHistory";
 
 export default BookingHistory;

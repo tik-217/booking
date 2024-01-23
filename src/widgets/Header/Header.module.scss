@@ -1,0 +1,185 @@
+@import "/src/shared/styles/mixin.scss";
+
+.header {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+
+  margin: 0 auto;
+
+  max-width: $gl-max-width;
+  min-width: $gl-min-width;
+
+  position: relative;
+
+  padding: 35px 0;
+
+  z-index: 100;
+
+  &__logo {
+    @media #{$screen-middle-booking-calc} {
+      order: 1;
+    }
+
+    a {
+      font-size: $heading_3;
+      color: $beige;
+      font-weight: 600;
+      text-decoration: none;
+    }
+  }
+
+  &__menu {
+    @media #{$screen-middle-booking-calc} {
+      transition: $transition-main-duration $transition-main-type top;
+      order: 2;
+
+      position: fixed;
+      z-index: 5;
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 100%;
+
+      background: $main_grey;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    &_active {
+      display: flex;
+      justify-content: flex-end;
+
+      @media #{$screen-middle-booking-calc} {
+        transition: $transition-main-duration $transition-main-type top;
+        order: 2;
+
+        position: fixed;
+        z-index: 5;
+        top: -100vh;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+
+        background: $main_grey;
+
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+      }
+    }
+  }
+
+  &__menuWrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99;
+
+    @media #{$screen-middle-booking-calc} {
+      position: relative;
+      top: 0;
+      left: 0;
+
+      order: 4;
+
+      transform: translate(0%, 0%);
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+
+    @media #{$screen-middle-booking-calc} {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      transition: $transition-main-duration $transition-main-type all;
+    }
+  }
+
+  &__listItem {
+    margin: 0 12px;
+    position: relative;
+
+    @media #{$screen-middle-booking-calc} {
+      margin: 0;
+    }
+
+    @include underline("dark");
+  }
+
+  &__login {
+    display: flex;
+    justify-content: right;
+
+    list-style: none;
+
+    @media #{$screen-middle-booking-calc} {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      order: 3;
+    }
+  }
+
+  &__loginItem {
+    position: relative;
+    margin-left: 15px;
+
+    @include underline("dark");
+  }
+
+  &__listItem,
+  &__loginItem {
+    a {
+      color: inherit;
+
+      @media #{$screen-middle-booking-calc} {
+        margin-left: 0;
+        font-size: $heading_3;
+
+        color: $black;
+      }
+    }
+  }
+
+  &__registered {
+    color: inherit;
+  }
+
+  &__open {
+    display: none;
+
+    @media #{$screen-middle-booking-calc} {
+      display: grid;
+      justify-self: flex-end;
+
+      order: 2;
+    }
+  }
+
+  &__close {
+    display: none;
+
+    &_active {
+      @media #{$screen-middle-booking-calc} {
+        display: block;
+        position: absolute;
+        top: 35px;
+        right: 5%;
+
+        color: $text_grey;
+      }
+    }
+  }
+}

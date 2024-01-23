@@ -18,7 +18,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 // img
-import Pool from "/public/images/ico/pool.svg";
+import Pool from "/public/ico/pool.svg";
 
 export default memo(function HotelCardWide() {
   const pagination = {

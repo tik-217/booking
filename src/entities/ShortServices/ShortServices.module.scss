@@ -1,0 +1,36 @@
+
+.shortServices {
+  margin-top: 20px;
+
+  &__title {
+    font-size: $heading_5;
+    font-weight: 400;
+    margin-bottom: 10px;
+  }
+
+  &__list {
+    list-style: none;
+
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    margin-right: 20px;
+    margin-bottom: 10px;
+  }
+
+  &__ico {
+    height: 23px;
+    width: 23px;
+    color: #1466ac;
+  }
+
+  &__name {
+    line-height: 95%;
+    margin-left: 4px;
+    color: inherit;
+  }
+}

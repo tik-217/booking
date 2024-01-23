@@ -1,0 +1,38 @@
+.aboutOfHotel {
+  margin-top: 50px;
+  padding: 10px 0;
+
+  background: $main_grey;
+
+  &__wrap {
+    margin: 20px 0;
+  }
+
+  &__title {
+    font-size: $heading_4;
+    font-weight: 400;
+  }
+
+  &__mainBlock {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 10px;
+
+    @media #{$screen-middle} {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__text {
+    font-size: $secondary_fsize;
+    max-width: 750px;
+
+    margin-bottom: 20px;
+    margin-right: 40px;
+
+    @media #{$screen-middle} {
+      margin-right: 0;
+    }
+  }
+}

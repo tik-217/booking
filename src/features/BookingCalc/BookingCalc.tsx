@@ -1,11 +1,12 @@
 "use client";
 
-// react
+// react next
 import { memo, useState } from "react";
+import Link from "next/link";
 
 // mantine
 import { useForm } from "@mantine/form";
-import { Button, Select } from "@mantine/core";
+import { Select } from "@mantine/core";
 import {
   DatePickerInput,
   DatesProvider,
@@ -18,7 +19,7 @@ import "dayjs/locale/ru";
 
 // styles
 import styles from "./BookingCalc.module.scss";
-import Link from "next/link";
+import MainButton from "src/shared/ui/MainButton/MainButton";
 
 export default memo(function BookingCalc() {
   const [, setSubmittedValues] = useState("");
@@ -97,13 +98,7 @@ export default memo(function BookingCalc() {
       </div>
       <div className={styles.calc__searchHotels}>
         <Link href={"/hotels"}>
-          <Button
-            size="md"
-            type="submit"
-            className={styles.calc__searchHotelsBtn}
-          >
-            Подобрать
-          </Button>
+          <MainButton btnText={"Подобрать"} />
         </Link>
       </div>
     </form>

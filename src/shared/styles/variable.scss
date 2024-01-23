@@ -7,11 +7,12 @@ $main_grey: #f3f3f3;
 $text_grey: #cfcfcf;
 $secondary_grey: #cdcdcd;
 $green: #33a15f;
+$black: #000;
 
 // font
 $heading_1: 2.3em; // 37px
 $heading_2: 1.9em; // 30px
-$heading_3: 1.5em; // 24px
+$heading_3: 1.7em; // 24px
 $heading_4: 1.3em; // 20px
 $heading_5: 1.12em; // 18px
 $main_fsize: 1em; // 16px
@@ -33,7 +34,6 @@ $gl-margin-left-mob: 3%;
 $gl-margin-right-mob: 3%;
 
 // screen
-
 $screen-large: "(max-width: 1440px)";
 $screen-large-booking-calc: "(max-width: 1200px)";
 $screen-middle-booking-calc: "(max-width: 860px)";
@@ -46,3 +46,7 @@ $transition-main-duration: 0.4s;
 $transition-btn-duration: 0.4s;
 $transition-main-type: cubic-bezier(0.65, 0, 0.35, 1) 0s;
 $transition-btn-type: easy-in-out;
+
+:export {
+  heading_3: heading_3;
+}

@@ -1,8 +1,7 @@
-// next
-import Image from "next/image";
+"use client";
 
-// entities
-import HeaderProfile from "src/entities/HeaderProfile/HeaderProfile";
+// react
+import { memo } from "react";
 
 // mantine
 import { Button } from "@mantine/core";
@@ -10,10 +9,21 @@ import { Button } from "@mantine/core";
 // clsx
 import clsx from "clsx";
 
+// entities
+import HeaderProfile from "src/widgets/HeaderProfile/HeaderProfile";
+
+// shared
+import useCheckAuth from "src/shared/helpers/useCheckAuth";
+
 // styles
 import styles from "./Profile.module.scss";
 
-export default function Profile() {
+// img
+import Bear from "/public/ico/bear.svg";
+
+export default memo(function Profile() {
+  useCheckAuth();
+
   return (
     <>
       <HeaderProfile />
@@ -23,13 +33,7 @@ export default function Profile() {
             <div className={styles.shortInfo__wrap}>
               <div className={styles.shortInfo__image}>
                 <div className={styles.shortInfo__ico}>
-                  <Image
-                    height={30}
-                    width={30}
-                    src={"/images/ico/bear.svg"}
-                    alt="logo"
-                    className={styles.shortInfo__logo}
-                  />
+                  <Bear className={styles.shortInfo__logo} />
                 </div>
                 <Button variant="transparent" size="xs" p={0}>
                   Изменить фото
@@ -111,4 +115,4 @@ export default function Profile() {
       </div>
     </>
   );
-}
+});

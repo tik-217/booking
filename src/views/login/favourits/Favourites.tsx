@@ -1,6 +1,14 @@
+"use client";
+
+// react
+import { memo } from "react";
+
 // entities
-import HeaderProfile from "src/entities/HeaderProfile/HeaderProfile";
+import HeaderProfile from "src/widgets/HeaderProfile/HeaderProfile";
 import ShortCard from "src/entities/ShortCard/ShortCard";
+
+// shared
+import useCheckAuth from "src/shared/helpers/useCheckAuth";
 
 // clsx
 import clsx from "clsx";
@@ -8,7 +16,9 @@ import clsx from "clsx";
 // styles
 import styles from "./Favourites.module.scss";
 
-export default function Favourites() {
+export default memo(function Favourites() {
+  useCheckAuth();
+
   return (
     <>
       <HeaderProfile />
@@ -25,4 +35,4 @@ export default function Favourites() {
       </div>
     </>
   );
-}
+});

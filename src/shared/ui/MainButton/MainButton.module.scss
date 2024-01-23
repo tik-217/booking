@@ -30,6 +30,15 @@
     }
   }
 
+  &_yellow {
+    border: 2px solid $beige;
+    color: white;
+
+    &:hover {
+      background: $beige;
+    }
+  }
+
   &_colorBlack {
     color: black;
   }

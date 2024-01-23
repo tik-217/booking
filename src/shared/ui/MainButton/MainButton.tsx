@@ -16,16 +16,17 @@ export default memo(function MainButton({
   colorTheme,
 }: {
   btnText: string;
-  bgTheme?: "blue";
+  bgTheme?: "yellow" | "blue";
   colorTheme?: "black";
 }) {
   return (
     <Button
       size="md"
-      type="button"
+      type="submit"
       className={clsx(
         styles.button,
-        bgTheme === "blue" ? styles.button_blue : "",
+        bgTheme ?? bgTheme === "blue" ? styles.button_blue : "",
+        bgTheme ?? bgTheme === "yellow" ? styles.button_yellow : "",
         colorTheme === "black" ? styles.button_colorBlack : ""
       )}
     >

@@ -1,12 +1,10 @@
-@import "/src/shared/styles/variable.scss";
-
 .mainScreen {
   background: url("/images/andreas-gabler-XEW_Wd4240c-unsplash.avif");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   position: relative;
-  padding: 35px 5%;
+  padding: 0 5% 35px;
   z-index: 10;
 
   &::after {
@@ -25,6 +23,10 @@
   &__wrapper {
     position: relative;
     z-index: 2;
+  }
+
+  &__headerWrap {
+    color: #fff;
   }
 }
 

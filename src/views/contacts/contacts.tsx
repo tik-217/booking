@@ -2,14 +2,14 @@
 
 import { Input, MantineProvider, Textarea, createTheme } from "@mantine/core";
 import { useForm } from "@mantine/form";
-import HeaderAccount from "src/entities/HeaderAccount/HeaderAccount";
 import { IMaskInput } from "react-imask";
 import { memo, useState } from "react";
 
 import styles from "./contacts.module.scss";
 import clsx from "clsx";
-import Footer from "src/entities/Footer/Footer";
+import Footer from "src/widgets/Footer/Footer";
 import MainButton from "src/shared/ui/MainButton/MainButton";
+import Header from "src/widgets/Header/Header";
 
 export default memo(function Contacts() {
   const [, setSupportValue] = useState<ISupport>();
@@ -38,7 +38,9 @@ export default memo(function Contacts() {
 
   return (
     <div className={"windowWidth"}>
-      <HeaderAccount />
+      <div>
+        <Header />
+      </div>
       <main className={clsx(styles.contacts)}>
         <div className={styles.contacts__question}>
           <h4 className={styles.contacts__title}>Задать вопрос</h4>

@@ -8,7 +8,7 @@ import { MutableRefObject, memo } from "react";
 import BookingCalc from "src/features/BookingCalc/BookingCalc";
 
 // entities
-import Header from "src/entities/Header/Header";
+import Header from "src/widgets/Header/Header";
 
 // styles
 import styles from "./MainScreen.module.scss";
@@ -30,7 +30,9 @@ export default memo(function MainScreen({
   return (
     <div className={styles.mainScreen}>
       <div className={styles.mainScreen__wrapper}>
-        <Header />
+        <div className={styles.mainScreen__headerWrap}>
+          <Header />
+        </div>
         <div className={styles.bookingSystem}>
           <h1 className={styles.bookingSystem__title}>
             Бронируйте через систему Vroom Room
@@ -41,7 +43,7 @@ export default memo(function MainScreen({
           <Image
             height="30"
             width="30"
-            src="images/ico/arrow-down.svg"
+            src="/ico/arrow-down.svg"
             alt="arrow-down"
             onClick={() => scrollToTopHotels()}
             className={styles.bookingSystem__image}

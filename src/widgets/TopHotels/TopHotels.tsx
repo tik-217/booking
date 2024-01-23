@@ -4,7 +4,7 @@
 import { memo } from "react";
 
 // entities
-import HotelCard from "src/entities/HotelCard/HotelCard";
+import HotelCard from "src/features/HotelCard/HotelCard";
 
 // swiper
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -31,7 +31,7 @@ export default memo(function TopHotels() {
             slidesPerView: 4,
             spaceBetween: 10,
           },
-          900: {
+          800: {
             slidesPerView: 3,
             spaceBetween: 10,
           },

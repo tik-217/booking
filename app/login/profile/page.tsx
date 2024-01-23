@@ -1,3 +1,3 @@
-import Profile from "src/views/login/profile/Profile";
+import Profile from "src/views/Login/Profile/Profile";
 
 export default Profile;

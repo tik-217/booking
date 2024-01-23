@@ -1,3 +1,3 @@
-import Login from "src/views/login/login";
+import Login from "src/views/Login/Login";
 
 export default Login;

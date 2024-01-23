@@ -1,4 +1,4 @@
-@import "/src/shared/styles/variable.scss";
+
 
 .persona {
   &__wrap {
@@ -124,7 +124,7 @@
 
       display: none;
 
-      background: url("/images/ico/pencil.svg");
+      background: url("/ico/pencil.svg");
       background-repeat: repeat;
       background-position: center;
       background-size: contain;

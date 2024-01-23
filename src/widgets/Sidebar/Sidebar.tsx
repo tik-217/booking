@@ -1,5 +1,5 @@
 // react/next
-import { useState } from "react";
+import { memo, useState } from "react";
 import Image from "next/image";
 
 // mantine
@@ -16,9 +16,9 @@ import FilteringItems from "../../features/FilteringItems/FilteringItems";
 import styles from "./Sidebar.module.scss";
 
 // img
-import Close from "/public/images/ico/close.svg";
+import Close from "/public/ico/close.svg";
 
-export default function Sidebar() {
+export default memo(function Sidebar() {
   const [closeFilter, setCloseFilter] = useState(true);
 
   return (
@@ -52,7 +52,7 @@ export default function Sidebar() {
           <Image
             height={20}
             width={20}
-            src={"/images/ico/filtering.svg"}
+            src={"/ico/filtering.svg"}
             alt={"filtering"}
             className={styles.sidebar__filteringImage}
           />
@@ -60,4 +60,4 @@ export default function Sidebar() {
       </aside>
     </>
   );
-}
+});

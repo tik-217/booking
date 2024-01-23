@@ -1,0 +1,107 @@
+
+.headerAuth {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  @media #{$screen-middle-booking-calc} {
+    margin-bottom: 20px;
+    justify-content: center;
+    flex-direction: column-reverse;
+  }
+
+  &__name {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  &__text {
+    font-size: $secondary_fsize;
+
+    color: inherit;
+
+    font-weight: 500;
+
+    &:first-child {
+      margin-bottom: 6px;
+    }
+  }
+
+  &__image {
+    position: relative;
+
+    background: #fff;
+    border: 1px solid $text_grey;
+
+    padding: 15px;
+    border-radius: 50%;
+
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-left: 20px;
+
+    cursor: pointer;
+
+    @media #{$screen-middle-booking-calc} {
+      margin-left: 0;
+    }
+  }
+
+  &__text {
+    width: 120px;
+    text-align: end;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+    @media #{$screen-middle-booking-calc} {
+      display: none;
+    }
+  }
+
+  &__item {
+    margin-bottom: 5px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: #000;
+  }
+
+  &__menuBtn {
+    width: 300px;
+  }
+
+  &__menu {
+    list-style: none;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &__item {
+    margin-right: 20px;
+
+    list-style: none;
+
+    flex: 1;
+    flex-basis: content;
+  }
+
+  &__link {
+    text-decoration: none;
+
+    &_active {
+      color: $link_blue;
+    }
+  }
+}

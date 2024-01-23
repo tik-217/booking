@@ -1,3 +1,3 @@
-import Hotel from "src/views/hotel/Hotel";
+import Hotel from "src/views/Hotel/Hotel";
 
 export default Hotel;

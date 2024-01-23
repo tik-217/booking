@@ -16,7 +16,16 @@ const nextConfig = {
         port: "",
         pathname: "/services/constructor/1.0/static/**",
       },
+      {
+        protocol: "https",
+        hostname: "avatars.githubusercontent.com",
+        port: "",
+        pathname: "/u/**",
+      },
     ],
+  },
+  sassOptions: {
+    prependData: `@import "./src/shared/styles/variable.scss"; @import "./src/shared/styles/_mantine.scss"; @import "./src/shared/styles/mixin.scss";`,
   },
 };
 

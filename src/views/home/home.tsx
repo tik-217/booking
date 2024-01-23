@@ -1,7 +1,7 @@
 "use client";
 
 // next/react
-import { MutableRefObject, useRef } from "react";
+import { MutableRefObject, memo, useRef } from "react";
 
 // clsx
 import clsx from "clsx";
@@ -11,7 +11,7 @@ import MainScreen from "src/widgets/MainScreen/MainScreen";
 import TopHotels from "src/widgets/TopHotels/TopHotels";
 
 // entities
-import Footer from "src/entities/Footer/Footer";
+import Footer from "src/widgets/Footer/Footer";
 
 // shared
 import Advantage from "src/entities/Advantage/Advantage";
@@ -21,7 +21,7 @@ import Mailing from "src/entities/Mailing/Mailing";
 // styles
 import styles from "./home.module.scss";
 
-export default function Home() {
+export default memo(function Home() {
   const topHotels: MutableRefObject<HTMLDivElement | null> = useRef(null);
 
   return (
@@ -49,4 +49,4 @@ export default function Home() {
       </div>
     </>
   );
-}
+});

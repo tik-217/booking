@@ -1,8 +1,13 @@
 "use client";
 
+// react next
 import { memo, useEffect, useState } from "react";
-import styles from "./Filtering.module.scss";
+
+// mantine
 import { Checkbox, Flex, NumberInput } from "@mantine/core";
+
+// styles
+import styles from "./Filtering.module.scss";
 
 export default memo(function Filtering({
   filteringInfo,

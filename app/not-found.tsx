@@ -1,3 +1,3 @@
-import NotFound from "src/views/notFound/notFound";
+import NotFound from "src/views/NotFound/NotFound";
 
 export default NotFound;

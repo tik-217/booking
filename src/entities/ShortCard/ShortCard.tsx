@@ -1,7 +1,8 @@
 "use client";
 
-// next
+// react next
 import Image from "next/image";
+import { memo } from "react";
 
 // swiper
 import { SwiperSlide, Swiper } from "swiper/react";
@@ -13,10 +14,10 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 // img
-import Location from "/public/images/ico/location.svg";
+import Location from "/public/ico/location.svg";
 import MainButton from "src/shared/ui/MainButton/MainButton";
 
-export default function ShortCard() {
+export default memo(function ShortCard() {
   return (
     <div className={styles.shortCard}>
       <div className={styles.shortCard__slider}>
@@ -79,4 +80,4 @@ export default function ShortCard() {
       </div>
     </div>
   );
-}
+});
