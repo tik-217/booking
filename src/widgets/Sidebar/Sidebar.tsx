@@ -1,3 +1,5 @@
+"use client";
+
 // react/next
 import { memo, useState } from "react";
 import Image from "next/image";

@@ -6,6 +6,7 @@
   position: relative;
   padding: 0 5% 35px;
   z-index: 10;
+  margin-top: -102px;
 
   &::after {
     content: "";
@@ -31,13 +32,13 @@
 }
 
 .bookingSystem {
-  margin-top: 110px;
+  padding-top: 180px;
   display: flex;
   flex-direction: column;
   align-items: center;
 
   @media #{$screen-middle} {
-    margin-top: 50px;
+    padding-top: 150px;
   }
 
   &__title {
@@ -64,6 +65,10 @@
 
   &__system {
     margin: 40px 0;
+
+    @media #{$screen-middle} {
+      width: 80%;
+    }
   }
 
   @keyframes arrow {

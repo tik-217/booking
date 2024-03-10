@@ -20,7 +20,13 @@ import "swiper/css/pagination";
 // img
 import Pool from "/public/ico/pool.svg";
 
-export default memo(function HotelCardWide() {
+interface IHotelCardWide {
+  name: string;
+  cost: number;
+  numberOfGuests: number;
+}
+
+export default memo(function HotelCardWide(props: IHotelCardWide) {
   const pagination = {
     clickable: true,
     renderBullet: function (index: number, className: string) {
@@ -32,7 +38,7 @@ export default memo(function HotelCardWide() {
     <div className={styles.hotelCardWide}>
       <div className={clsx(styles.hotelCardWide__wrap, "windowWidth")}>
         <h3 className={styles.hotelCardWide__title}>
-          Двухместный делюкс с двуспальной кроватью
+          {props.name}
         </h3>
         <div className={styles.hotelCardWide__slider}>
           <div>
@@ -47,6 +53,7 @@ export default memo(function HotelCardWide() {
                 <Image
                   fill={true}
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  priority={false}
                   src={"/images/9b32bc4ab953979521ba7449387222a2_original.jpg"}
                   alt="9b32bc4ab953979521ba7449387222a2_original"
                 />
@@ -55,6 +62,7 @@ export default memo(function HotelCardWide() {
                 <Image
                   fill={true}
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  priority={false}
                   src={"/images/9b32bc4ab953979521ba7449387222a2_original.jpg"}
                   alt="9b32bc4ab953979521ba7449387222a2_original"
                 />
@@ -63,6 +71,7 @@ export default memo(function HotelCardWide() {
                 <Image
                   fill={true}
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  priority={false}
                   src={"/images/9b32bc4ab953979521ba7449387222a2_original.jpg"}
                   alt="9b32bc4ab953979521ba7449387222a2_original"
                 />
@@ -71,6 +80,7 @@ export default memo(function HotelCardWide() {
                 <Image
                   fill={true}
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  priority={false}
                   src={"/images/9b32bc4ab953979521ba7449387222a2_original.jpg"}
                   alt="9b32bc4ab953979521ba7449387222a2_original"
                 />
@@ -79,6 +89,7 @@ export default memo(function HotelCardWide() {
                 <Image
                   fill={true}
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  priority={false}
                   src={"/images/9b32bc4ab953979521ba7449387222a2_original.jpg"}
                   alt="9b32bc4ab953979521ba7449387222a2_original"
                 />
@@ -87,6 +98,7 @@ export default memo(function HotelCardWide() {
                 <Image
                   fill={true}
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  priority={false}
                   src={"/images/9b32bc4ab953979521ba7449387222a2_original.jpg"}
                   alt="9b32bc4ab953979521ba7449387222a2_original"
                 />
@@ -127,9 +139,9 @@ export default memo(function HotelCardWide() {
           </ul>
           <div className={styles.hotelCardWide__costSection}>
             <div className={styles.hotelCardWide__costSectionWrap}>
-              <span className={styles.hotelCardWide__cost}>4 000 ₽/ночь</span>
+              <span className={styles.hotelCardWide__cost}>{props.cost} ₽/ночь</span>
               <span className={styles.hotelCardWide__numberOfPeople}>
-                2 гостя
+                {props.numberOfGuests}
               </span>
             </div>
             <div className={styles.hotelCardWide__btn}>

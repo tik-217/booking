@@ -53,7 +53,7 @@ export default memo(function BookingHotel() {
             Забронированный номер
           </h5>
           <div className={styles.bookingHotel__slider}>
-            <HotelCardWide />
+            {/* <HotelCardWide /> */}
           </div>
         </div>
       </div>

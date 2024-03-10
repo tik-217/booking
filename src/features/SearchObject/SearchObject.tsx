@@ -8,8 +8,15 @@ import { Select } from "@mantine/core";
 
 // styles
 import styles from "./SearchObject.module.scss";
+import { HOTELS_SECTION } from "src/shared/api/apollo/hotel";
+import { getClient } from "src/shared/api/apollo/apollo";
+import { useSuspenseQuery } from "@apollo/client/react/hooks/useSuspenseQuery";
 
 export default memo(function SearchObject() {
+  // const { hotels } = useSuspenseQuery(
+  //   HOTELS_SECTION
+  // );
+
   return (
     <div className={styles.searchCity}>
       <Select

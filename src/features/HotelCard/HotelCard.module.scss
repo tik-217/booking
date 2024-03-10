@@ -3,8 +3,8 @@
   border-radius: 10px 10px 0 0;
   overflow: hidden;
   max-width: 300px;
-  width: inherit;
   width: 100%;
+  overflow: hidden;
 
   @media screen and (max-width: 500px) {
     max-width: max-content;
@@ -16,7 +16,6 @@
     display: flex;
 
     height: $slider-height;
-    width: inherit;
 
     position: relative;
     overflow: hidden;
@@ -25,15 +24,27 @@
       content: "";
       display: block;
     }
-
-    img {
-      object-fit: cover;
-      width: inherit;
-    }
   }
 
   &__sliderRoot {
     width: inherit;
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__slide {
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__img {
+    object-fit: cover;
+    height: auto;
+    width: 100%;
+    background-position-y: center;
+  }
+
+  &__top {
   }
 
   &__info {
@@ -121,6 +132,9 @@
         border-top: 4px solid #e5e5e5;
       }
     }
+  }
+
+  &__bottom {
   }
 
   &__cost {

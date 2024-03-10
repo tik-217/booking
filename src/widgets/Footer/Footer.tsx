@@ -14,7 +14,7 @@ import { memo } from "react";
 
 export default memo(function Footer() {
   return (
-    <footer className={clsx(styles.footer)}>
+    <footer className={clsx(styles.footer, "windowWidth")}>
       <div className={styles.footer__icons}>
         <h2>
           <Link href="/">Vroom Room</Link>
@@ -29,12 +29,7 @@ export default memo(function Footer() {
             />
           </Link>
           <Link href={"https://vk.com"}>
-            <Image
-              height={30}
-              width={30}
-              src={"/ico/vk.svg"}
-              alt={"vk"}
-            />
+            <Image height={30} width={30} src={"/ico/vk.svg"} alt={"vk"} />
           </Link>
           <Link href={"https://yandex.ru"}>
             <Image

@@ -2,10 +2,6 @@
 
 // react next
 import { memo } from "react";
-import dynamic from "next/dynamic";
-
-// mantine
-import { Badge, Button } from "@mantine/core";
 
 // clsx
 import clsx from "clsx";
@@ -14,57 +10,58 @@ import clsx from "clsx";
 import Header from "src/widgets/Header/Header";
 import Sidebar from "src/widgets/Sidebar/Sidebar";
 
-// entities
+// features
 import HotelCard from "src/features/HotelCard/HotelCard";
 
+// entities
+import Loading from "src/entities/Loading/Loading";
+import SearchResult from "src/entities/SearchResult/SearchResult";
+
 // shared
-import CreatingList from "src/shared/helpers/CreatingList";
-import { setOpenMap } from "src/shared/store/reducers";
-import { useAppDispatch } from "src/shared/store/hooks";
+// import { HOTELS_SECTION } from "src/shared/api/apollo/hotel";
+// import { IHotel, IHotelProperty } from "src/shared/types/hotels/IHotel";
 
 // styles
 import styles from "./hotels.module.scss";
+import { useQuery } from "@apollo/client";
+import { HOTELS_SECTION } from "src/shared/api/apollo/hotel";
+import { IHotels } from "src/shared/types/hotels/IHotel";
+
+// const HotelCardLazy = lazy(() => import("src/features/HotelCard/HotelCard"));
 
 export default memo(function Hotels() {
-  const dispatch = useAppDispatch();
-
-  const hotelsList = (hotelsNum: number) =>
-    CreatingList(hotelsNum, <HotelCard />);
-
-  const DynamicMap = dynamic(() => import("src/entities/Map/Map"), {
-    ssr: false,
-  });
+  const hotels = useQuery<IHotels>(HOTELS_SECTION).data?.hotels;
 
   return (
     <>
       <div className={clsx(styles.hotels, "windowWidth")}>
-        <div className={styles.hotels__headerWrap}>
-          <Header />
-        </div>
         <main className={clsx(styles.hotels__main)}>
           <Sidebar />
-          <div className={styles.searchResult}>
-            <div className={styles.searchResult__text}>
-              <div className={styles.searchResult__city}>
-                <Badge variant="dot" color="blue" size="lg">
-                  Анапа
-                </Badge>
-                <p>найдено 124 варианта</p>
-              </div>
-              <Button
-                variant="transparent"
-                p={0}
-                className={styles.searchResult__toMap}
-                onClick={() => dispatch(setOpenMap(true))}
-              >
-                На крате
-              </Button>
+          <div className={styles.resultHotels}>
+            <SearchResult />
+            <div className={styles.hotelsList}>
+              <>
+                {hotels &&
+                  hotels.map((el) => {
+                    return (
+                      <HotelCard
+                        id={el.id}
+                        city={el.city}
+                        stars={el.stars}
+                        name={el.name}
+                        photo={el.photo}
+                        services={el.hotelServices}
+                        rooms={el.rooms}
+                        key={el.id}
+                      />
+                    );
+                  })}
+              </>
             </div>
-            <div className={styles.hotelsList}>{hotelsList(9)}</div>
           </div>
         </main>
       </div>
-      <DynamicMap />
+      {/* <Map /> */}
     </>
   );
 });

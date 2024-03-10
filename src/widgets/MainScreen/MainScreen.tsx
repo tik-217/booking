@@ -7,9 +7,6 @@ import { MutableRefObject, memo } from "react";
 // features
 import BookingCalc from "src/features/BookingCalc/BookingCalc";
 
-// entities
-import Header from "src/widgets/Header/Header";
-
 // styles
 import styles from "./MainScreen.module.scss";
 
@@ -30,9 +27,6 @@ export default memo(function MainScreen({
   return (
     <div className={styles.mainScreen}>
       <div className={styles.mainScreen__wrapper}>
-        <div className={styles.mainScreen__headerWrap}>
-          <Header />
-        </div>
         <div className={styles.bookingSystem}>
           <h1 className={styles.bookingSystem__title}>
             Бронируйте через систему Vroom Room

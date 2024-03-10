@@ -10,9 +10,6 @@ import clsx from "clsx";
 import MainScreen from "src/widgets/MainScreen/MainScreen";
 import TopHotels from "src/widgets/TopHotels/TopHotels";
 
-// entities
-import Footer from "src/widgets/Footer/Footer";
-
 // shared
 import Advantage from "src/entities/Advantage/Advantage";
 import Location from "src/entities/Location/Location";
@@ -44,9 +41,6 @@ export default memo(function Home() {
           <Location />
         </div>
       </main>
-      <div className={"windowWidth"}>
-        <Footer />
-      </div>
     </>
   );
 });

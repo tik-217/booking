@@ -1,4 +1,3 @@
-
 .calc {
   display: grid;
   grid-template-columns: 300px 1fr auto auto;
@@ -61,6 +60,7 @@
 
   &__searchHotels {
     align-self: flex-end;
+    width: 100%;
 
     @media #{$screen-large-booking-calc} {
       grid-area: searchHotels;

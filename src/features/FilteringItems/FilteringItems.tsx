@@ -1,38 +1,20 @@
 "use client";
 
 // next
-import Image from "next/image";
 import { memo } from "react";
+import FilterServices from "src/features/FilterServices/FilterServices";
+import PriceScale from "src/entities/PriceScale/PriceScale";
 
 // features
-import Filtering from "src/entities/Filtering/Filtering";
+import Filtering from "src/features/Filtering/Filtering";
 
 // shared
-import CreatingList from "src/shared/helpers/CreatingList";
+import FilterSorting from "../FilterSorting/FilterSorting";
 
 export default memo(function FilteringItems() {
-  const stars = (starsNum: number) =>
-    CreatingList(
-      starsNum,
-      <Image height={10} width={10} src={"/ico/star.svg"} alt={"star"} />
-    );
-
   return (
     <>
-      <Filtering
-        filteringInfo={[
-          {
-            title: "Сортировка",
-            items: [
-              "По популярности",
-              "Сначала дешевые",
-              "Сначала дорогие",
-              "С высокой оценкой",
-            ],
-          },
-        ]}
-        markOne={true}
-      />
+      <FilterSorting />
       <Filtering
         filteringInfo={[
           {
@@ -43,56 +25,29 @@ export default memo(function FilteringItems() {
               "Апартаменты, квартиры",
               "Коттеджи, виллы, бунгало",
               "Кемпинг",
+              "Кемпинг",
+              "Кемпинг",
+              "Кемпинг",
+              "Кемпинг",
+              "Кемпинг",
+              "Кемпинг",
+              "Кемпинг",
+              "Кемпинг",
             ],
           },
         ]}
       />
-      <Filtering
-        filteringInfoNested={[
-          {
-            title: "Услуги",
-            subTitles: [
-              {
-                title: "В отеле",
-                items: [
-                  "Трансфер",
-                  "Парковка",
-                  "Бассейн",
-                  "Тренажерный зал",
-                  "Бар или ресторан",
-                ],
-              },
-              {
-                title: "В номере",
-                items: [
-                  "Кондиционер",
-                  "Ванная комната в номере",
-                  "Кухня",
-                  "Балкон",
-                ],
-              },
-            ],
-          },
-        ]}
-        isNested={true}
-      />
+      <FilterServices />
       <Filtering
         filteringInfo={[
           {
             title: "Количество звёзд",
-            items: [
-              stars(5),
-              stars(4),
-              stars(3),
-              stars(2),
-              stars(1),
-              "Без звезд",
-            ],
+            items: ["5", "4", "3", "2", "1", "Без звезд"],
           },
         ]}
         isNeedBtnMore={false}
       />
-      <Filtering priceScale={true} />
+      <PriceScale />
       <Filtering
         filteringInfo={[
           {
@@ -110,6 +65,12 @@ export default memo(function FilteringItems() {
               "Завтрак включен",
               "Завтрак + обед или ужин включены",
               "Завтрак, обед и ужин включены",
+              "Все включено",
+              "Все включено",
+              "Все включено",
+              "Все включено",
+              "Все включено",
+              "Все включено",
               "Все включено",
             ],
           },

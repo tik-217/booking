@@ -30,14 +30,14 @@
     @if ($color == "dark") {
       color: #fff;
     } @else if($color == "white") {
-      color: $dark_blue;
+      color: #000;
     }
 
     @media #{$screen-middle-booking-calc} {
       @if ($color == "dark") {
         color: $main_grey;
       } @else if($color == "white") {
-        color: $dark_blue;
+        color: #000;
       }
     }
   }

@@ -37,7 +37,7 @@ export default memo(function Header() {
   }, []);
 
   return (
-    <header className={styles.header}>
+    <header className={clsx(styles.header, "windowWidth")}>
       <div
         className={clsx(
           styles.header__logo,

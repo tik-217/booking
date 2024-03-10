@@ -1,0 +1,21 @@
+.filtering {
+  h5 {
+    font-size: 1em;
+    margin-bottom: 18px;
+    line-height: 110%;
+  }
+
+  ul {
+    list-style: none;
+
+    li {
+      margin-bottom: 8px;
+    }
+  }
+}
+
+.filtering__priceCost {
+  input {
+    border: 2px solid $beige;
+  }
+}

@@ -10,7 +10,7 @@ import styles from "./ServicesBlock.module.scss";
 export default memo(function ServicesBlock() {
   return (
     <ul className={styles.servicesBlock__list}>
-      <li className={styles.servicesBlock__item}>
+      {/* <li className={styles.servicesBlock__item}>
         <Service />
       </li>
       <li className={styles.servicesBlock__item}>
@@ -18,7 +18,7 @@ export default memo(function ServicesBlock() {
       </li>
       <li className={styles.servicesBlock__item}>
         <Service />
-      </li>
+      </li> */}
     </ul>
   );
 });

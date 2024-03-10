@@ -7,6 +7,7 @@ import { useForm } from "@mantine/form";
 
 // shared
 import MainButton from "src/shared/ui/MainButton/MainButton";
+import { IFormValues } from "src/shared/types/home/IHomeForm";
 
 // styles
 import styles from "./Mailing.module.scss";

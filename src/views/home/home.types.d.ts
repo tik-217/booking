@@ -1,3 +1,0 @@
-interface IFormValues {
-  email: string;
-}

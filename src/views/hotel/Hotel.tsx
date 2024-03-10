@@ -1,21 +1,21 @@
 "use client";
 
 // next
-import { memo } from "react";
+import { memo, useEffect } from "react";
 import dynamic from "next/dynamic";
 
-// widgets
-import Reviews from "src/features/Reviews/Reviews";
-import AvailableRooms from "src/widgets/AvailableRooms/AvailableRooms";
-import AboutOfHotel from "src/widgets/AboutOfHotel/AboutOfHotel";
-import HotelPolicy from "src/widgets/HotelPolicy/HotelPolicy";
-import AllServices from "src/widgets/AllServices/AllServices";
+// apollo
+import { useQuery } from "@apollo/client";
 
-// entities
-import Header from "src/widgets/Header/Header";
-import HotelInfo from "src/entities/HotelInfo/HotelInfo";
-import ShortServices from "src/entities/ShortServices/ShortServices";
-import Footer from "src/widgets/Footer/Footer";
+// widgets
+import AllServices from "src/widgets/AllServices/AllServices";
+import MainOfHotel from "src/widgets/MainOfHotel/MainOfHotel";
+
+// shared
+import { useAppDispatch } from "src/shared/store/hooks";
+import { setHotelIndexPage } from "src/shared/store/reducers";
+import { IHotel } from "src/shared/types/hotels/IHotel";
+import { HOTEL_SECTION } from "src/shared/api/apollo/hotel";
 
 // clsx
 import clsx from "clsx";
@@ -26,38 +26,44 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "leaflet/dist/leaflet.css";
 
-export default memo(function Hotel() {
-  const DynamicMap = dynamic(() => import("src/entities/Map/Map"), {
-    ssr: false,
-  });
+const DynamicMap = dynamic(() => import("src/entities/Map/Map"), {
+  ssr: false,
+});
+
+export default memo(function Hotel({ params }: { params: { id: string } }) {
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(setHotelIndexPage(+params.id));
+  }, [params]);
+
+  const error = useQuery<IHotel>(HOTEL_SECTION, {
+    variables: { id: +params.id },
+    pollInterval: 10000,
+  }).error;
 
   return (
     <>
-      <div className={styles.hotel}>
-        <div className={"windowWidth"}>
-          <div className={styles.hotel__headerWrap}>
-            <Header />
-          </div>
-        </div>
-        <HotelInfo />
-        <ShortServices />
-        <Reviews />
-        <AvailableRooms />
-        <AboutOfHotel />
-        <HotelPolicy />
-        <div className={clsx(styles.allServicesWrap, "windowWidth")}>
-          <h3 className={styles.allServicesWrap__title}>Остальные удобства</h3>
-          <div className={styles.allServicesWrap__main}>
-            <AllServices />
-            <AllServices />
-            <AllServices />
-            <AllServices />
-          </div>
-        </div>
-        <div className={"windowWidth"}>
-          <Footer />
-        </div>
-      </div>
+      <main className={styles.hotel}>
+        {error ? (
+          <div className={"windowWidth"}>Error! {error.message}</div>
+        ) : (
+          <>
+            <MainOfHotel />
+            <div className={clsx(styles.allServicesWrap, "windowWidth")}>
+              <h3 className={styles.allServicesWrap__title}>
+                Остальные удобства
+              </h3>
+              <div className={styles.allServicesWrap__main}>
+                <AllServices />
+                <AllServices />
+                <AllServices />
+                <AllServices />
+              </div>
+            </div>
+          </>
+        )}
+      </main>
       <DynamicMap />
     </>
   );

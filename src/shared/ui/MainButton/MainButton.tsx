@@ -1,11 +1,11 @@
 // react
 import { memo } from "react";
 
-// clsx
-import clsx from "clsx";
-
 // mantine
 import { Button } from "@mantine/core";
+
+// clsx
+import clsx from "clsx";
 
 // styles
 import styles from "./MainButton.module.scss";
@@ -23,6 +23,7 @@ export default memo(function MainButton({
     <Button
       size="md"
       type="submit"
+      fullWidth
       className={clsx(
         styles.button,
         bgTheme ?? bgTheme === "blue" ? styles.button_blue : "",

@@ -1,0 +1,37 @@
+.searchResult {
+  &__text {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+  }
+
+  &__city {
+    display: flex;
+    align-items: center;
+
+    p {
+      font-size: $heading_4;
+      margin-left: 5px;
+      margin-bottom: 2px;
+
+      @media #{$screen-middle} {
+        font-size: 1em;
+      }
+    }
+  }
+
+  &__toMap {
+    cursor: pointer;
+
+    @media #{$screen-middle} {
+      font-size: 1em;
+    }
+  }
+
+  &__text_active,
+  &__toMap {
+    color: $link_blue;
+  }
+}
